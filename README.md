@@ -34,7 +34,7 @@
 
 把仓库链接和下面这句一起发给能运行命令的 agent：
 
-> 读取 https://raw.githubusercontent.com/waterman995/slave/main/SKILL.md，严格照做。先把仓库克隆到 ~/.pi/agent/skills/ziwei-report，运行 `bash install.sh`；然后按 SKILL.md 给我做一本个人盘。我的出生信息是：……
+> 读取 https://raw.githubusercontent.com/waterman995/slave/main/SKILL.md，严格照做。先把仓库克隆到 ~/.pi/agent/skills/ziwei-report，运行 `bash ~/.pi/agent/skills/ziwei-report/install.sh`；然后按 SKILL.md 给我做一本个人盘。我的出生信息是：……
 
 只能读网页、不能运行命令的 agent：让它先读 `SKILL.md`，按规范写 Markdown 正文；不要假装能生成 PDF。
 
@@ -105,7 +105,7 @@ PDF 放桌面。
 PDF 放桌面。
 ```
 
-第一次跑会拉引擎、装字体；之后复用缓存。具体排盘、章节、引证规则都在 `SKILL.md`。
+引擎和字体由 `install.sh` 准备好；之后每本册子复用缓存。具体排盘、章节、引证规则都在 `SKILL.md`。
 
 ## 目录结构
 
@@ -130,6 +130,8 @@ examples/
   sample.pdf             样例 PDF
   cover.png / chapter.png / backcover.png
 ```
+
+根目录还有 `README.md`、`LICENSE`、`NOTICE`、`CHANGELOG.md`、`CONTRIBUTING.md` 和 `.github/workflows/ci.yml`。
 
 ## 它是怎么工作的
 
