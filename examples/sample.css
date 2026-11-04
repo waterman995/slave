@@ -1,0 +1,233 @@
+/* 样例快照；正式格式以 references/format.md 为准。 */
+:root {
+  --serif: "Noto Serif CJK SC", "Songti SC", "SimSun", "Noto Serif", serif;
+  --kai: "LXGW WenKai", "Kaiti SC", "KaiTi", "Noto Serif CJK SC", serif;
+  --sans: "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 16mm 16mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK SC", sans-serif;
+    font-size: 9pt; color: #a89a83; letter-spacing: 0.08em;
+  }
+}
+@page :first { margin: 0; @bottom-center { content: none; } }
+@page cover { margin: 0; background: #14120f; @bottom-center { content: none; } }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--serif);
+  font-size: 12pt; line-height: 1.85; color: #1d1b18; text-align: justify;
+}
+
+/* ── 封面 ───────────────────────────────── */
+.cover {
+  page: cover; height: 297mm; width: 210mm;
+  background: #14120f; color: #efe7d8;
+  padding: 40mm 26mm 26mm 26mm; position: relative;
+  page-break-after: always;
+}
+.cover .rule { width: 46mm; height: 1px; background: #c9a227; margin-bottom: 14mm; }
+.cover h1 {
+  font-family: var(--kai);
+  font-size: 44pt; font-weight: 500; letter-spacing: 0.14em;
+  line-height: 1.35; margin: 0 0 8mm 0; color: #f2ead9;
+}
+.cover h2 {
+  font-size: 12pt; font-weight: 400; color: #b9ac93;
+  letter-spacing: 0.24em; margin: 0 0 26mm 0;
+}
+.cover .meta { font-size: 10.5pt; line-height: 2.2; color: #a2957d; }
+.cover .meta b { color: #ded3bd; font-weight: 500; }
+.cover .epigraph {
+  position: absolute; left: 26mm; right: 26mm; bottom: 28mm;
+  font-family: var(--kai); font-size: 11pt; line-height: 2;
+  color: #8f8571; border-top: 1px solid #3a342b; padding-top: 7mm;
+}
+.cover .mark {
+  position: absolute; right: 24mm; top: 32mm;
+  font-size: 7.5pt; letter-spacing: 0.4em; color: #5c5345;
+  writing-mode: vertical-rl;
+}
+
+/* ── 封底（最后一页，不是章） ───────────── */
+.backcover {
+  page: cover; page-break-before: always;
+  width: 210mm; height: 297mm;
+  background: #14120f; color: #b9ac93;
+  padding: 106mm 30mm 0 30mm; position: relative;
+}
+.backcover .bc-rule { width: 34mm; height: 1px; background: #c9a227; margin: 0 0 10mm 0; }
+.backcover .bc-sentence {
+  font-family: var(--kai); font-size: 15pt; color: #efe7d8;
+  letter-spacing: 0.06em; line-height: 2.2; margin: 0 0 14mm 0;
+}
+.backcover .bc-phrase {
+  font-family: var(--kai); font-size: 15pt; color: #efe7d8;
+  letter-spacing: 0.12em; line-height: 1.9; margin: 0;
+}
+
+/* ── 目录 ───────────────────────────────── */
+.toc { padding-top: 8mm; }
+.toc h2 { font-size: 17pt; letter-spacing: 0.24em; font-weight: 500; margin: 0 0 3mm 0; }
+.toc .sub { font-size: 9pt; color: #8a7f6d; letter-spacing: 0.18em; margin-bottom: 12mm; }
+.toc ol { list-style: none; padding: 0; margin: 0; }
+.toc li {
+  font-size: 11pt; padding: 1.25mm 0;
+  border-bottom: 1px dotted #ddd5c6;
+  display: flex; justify-content: space-between;
+}
+.toc li span.n { color: #b08a3e; font-size: 9pt; letter-spacing: 0.12em; margin-right: 5mm; }
+.toc li span.t { flex: 1; }
+.toc li span.p { color: #9a8f7d; font-size: 10pt; }
+.toc li.grp {
+  border-bottom: none; padding-top: 2.4mm;
+  font-family: var(--sans); font-size: 7.8pt; letter-spacing: 0.3em; color: #b08a3e;
+}
+
+/* ── 章 / 节 ────────────────────────────── */
+h1.chap {
+  font-size: 24pt; font-weight: 500; letter-spacing: 0.12em;
+  margin: 16mm 0 2mm 0; padding-top: 6mm;
+  border-top: 2px solid #1d1b18; line-height: 1.4;
+  page-break-after: avoid;
+  page-break-before: always;
+}
+h1.chap .num {
+  display: block; font-family: var(--sans);
+  font-size: 8.5pt; letter-spacing: 0.3em; color: #b08a3e;
+  margin-bottom: 3mm; font-weight: 400;
+}
+h2.sec {
+  font-size: 15pt; font-weight: 500; letter-spacing: 0.08em;
+  margin: 10mm 0 4mm 0; padding-left: 4mm;
+  border-left: 3px solid #c9a227; line-height: 1.5;
+  page-break-after: avoid;
+}
+h2.sec .n { color: #b08a3e; font-size: 10pt; letter-spacing: 0.1em; margin-right: 3mm; }
+
+/* ── 问答 ───────────────────────────────── */
+.q-main {
+  font-family: var(--kai);
+  font-size: 14pt; line-height: 1.75;
+  margin: 8mm 0 6mm 0; color: #2e2820;
+  page-break-inside: avoid; page-break-after: avoid;
+}
+.q-main .lbl {
+  display: block; font-family: var(--sans);
+  font-size: 7.5pt; letter-spacing: 0.3em; color: #b08a3e;
+  margin-bottom: 2mm;
+}
+.q-follow {
+  font-family: var(--serif);
+  font-size: 11pt; line-height: 1.8;
+  border-left: 2px solid #c9a227;
+  padding: 0 0 0 4mm; margin: 5mm 0 2mm 0;
+  color: #2e2820;
+  page-break-after: avoid;
+}
+.q-follow .who {
+  display: block; font-family: var(--sans);
+  font-size: 7.5pt; letter-spacing: 0.25em; color: #b08a3e;
+  margin-bottom: 1mm;
+}
+.a { margin: 0 0 4mm 0; }
+.a .who {
+  display: block; font-family: var(--sans);
+  font-size: 7.5pt; letter-spacing: 0.3em; color: #9c9284;
+  margin-bottom: 1mm;
+}
+.a p, .q-main p, .q-follow p { margin: 0 0 2.2mm 0; }
+.a p { orphans: 2; widows: 2; }
+
+/* ── 章末一句 ───────────────────────────── */
+.chapter-last {
+  margin: 9mm 0 0 0; padding-top: 4mm;
+  border-top: 1px solid #c9a227;
+  font-family: var(--kai); font-size: 13pt; line-height: 1.8;
+  color: #2e2820;
+  page-break-inside: avoid;
+}
+.chapter-last .lbl {
+  display: block; font-family: var(--sans);
+  font-size: 7.5pt; letter-spacing: 0.28em; color: #b08a3e;
+  margin-bottom: 1.5mm;
+}
+
+/* ── 引文 ───────────────────────────────── */
+blockquote {
+  font-size: 10.5pt; line-height: 1.8; color: #5d5446;
+  border-left: 2px solid #ddd3bf;
+  padding: 1mm 0 1mm 5mm; margin: 4mm 0 4mm 2mm;
+  page-break-inside: avoid;
+}
+blockquote .src {
+  display: block; font-size: 8.5pt; color: #a2947c;
+  margin-top: 1.5mm; letter-spacing: 0.04em;
+}
+blockquote.ni {
+  color: #6f2d36; font-style: italic;
+  border-left-color: #b98a8f;
+}
+blockquote.ni .src { font-style: normal; color: #8a5a5f; }
+.ni-inline { color: #6f2d36; font-style: italic; }
+
+/* ── 强调 ───────────────────────────────── */
+strong { font-weight: 700; color: #0f0d0a; }
+.inference { font-weight: 700; font-size: 0.86em; color: #6e6557; }
+em { font-style: italic; }
+
+/* ── 序末句 ─────────────────────────────── */
+.preface-phrase {
+  margin: 20mm 0 8mm 0;
+  text-align: center;
+  font-family: var(--kai);
+  font-size: 15pt; letter-spacing: 0.12em; color: #2e2820;
+  page-break-inside: avoid;
+}
+
+/* ── 表格 ───────────────────────────────── */
+table {
+  width: 100%; border-collapse: collapse;
+  font-size: 10pt; margin: 4mm 0 5mm 0;
+  page-break-inside: avoid;
+  table-layout: fixed;
+}
+table.long { page-break-inside: auto; }
+table.long tr { page-break-inside: avoid; }
+table.long thead { display: table-header-group; }
+th {
+  background: #f3ecdd; font-size: 9.5pt; font-weight: 600;
+  text-align: left; padding: 2mm 2.5mm;
+  border-bottom: 1.2px solid #c9a227;
+}
+td {
+  padding: 1.8mm 2.5mm;
+  border-bottom: 1px solid #ece5d7;
+  vertical-align: top;
+  word-break: break-word;
+}
+td.k { color: #7a6f5d; width: 24%; }
+
+/* ── 提示块（少用） ─────────────────────── */
+.note {
+  background: #f7f4ed; border: 1px solid #e6ddca;
+  padding: 4mm 5mm; margin: 5mm 0;
+  font-size: 11pt; line-height: 1.75;
+  page-break-inside: auto;
+}
+.note .lbl {
+  font-family: var(--sans); font-size: 7.5pt;
+  letter-spacing: 0.3em; color: #b08a3e;
+  display: block; margin-bottom: 1.5mm;
+}
+
+/* ── 辅助 ───────────────────────────────── */
+.small { font-size: 9pt; color: #6e6557; line-height: 1.75; }
+.keep { page-break-inside: avoid; }
+.center { text-align: center; }
+hr { border: 0; border-top: 1px solid #e2d9c8; margin: 8mm 0; }

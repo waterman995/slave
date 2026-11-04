@@ -1,0 +1,35 @@
+ziwei-report
+Copyright (c) 2026 waterman995
+
+This repository contains work from several sources. The MIT license in
+LICENSE applies to the original code and original text of this repository,
+except where noted below.
+
+1. Upstream chart engine and CLI
+   Source: https://github.com/Renhuai123/ziwei-doushu
+   Author: 王多鱼AI
+   Copyright (c) 2026 紫微研究
+   License: MIT
+   The file assets/cli.ts is derived from this project. The MIT permission
+   text is in LICENSE; the upstream copyright notice is reproduced here.
+
+2. Short quotations from 倪海厦《天纪》
+   The skill text and example booklet contain short quotations from
+   Ni Haixia's Tianji lectures. These quotations are licensed under
+   CC BY-NC-SA 4.0, not MIT:
+   https://creativecommons.org/licenses/by-nc-sa/4.0/
+   Copyright remains with Ni Haixia's estate and rights holders.
+   Booklets generated with these quotations are for non-commercial use only.
+
+3. Classics
+   《骨髓赋》《紫微斗数全集》《紫微斗数全书》 are in the public domain.
+
+4. Upstream interpretation dataset
+   The upstream v4.0 dataset (674,976 charts x 13 dimensions, CC BY 4.0) is
+   not included in this repository and is not used by this skill.
+
+5. Fonts
+   Fonts are not included in this repository. scripts/setup-fonts.sh downloads
+   Noto Serif CJK SC, Noto Sans CJK SC, and LXGW WenKai. Noto is licensed under
+   the SIL Open Font License; LXGW WenKai is licensed under the SIL Open Font
+   License. See the upstream font projects for details.

@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+book.pdf
+book.html
+pv-*.png
+*.log
