@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ziwei-report 环境探测（只读，不安装）
+# wake_the_slave 环境探测（只读，不安装）
 # 用法：bash check-env.sh [--quiet]
 #
 # 它只告诉你缺什么；装什么、怎么装，看 setup-fonts.sh 或下面的提示。

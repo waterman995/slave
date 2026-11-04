@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.1.0 — 2026-11-04
+
+- Rename skill `ziwei-report` → `wake_the_slave`.
+- Default routing: bare birth info goes to `wake_the_slave`; `ziwei-doushu` only for explicit single-point questions.
+- Restore `ziwei-doushu` skill with routing guard.
+
 ## 4.0.0 — 2026-11-04
 
 Complete rewrite of the `ziwei-report` skill.

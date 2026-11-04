@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ziwei-report 字体安装
+# wake_the_slave 字体安装
 # 用法：
 #   bash setup-fonts.sh             # 缺什么装什么（用户字体目录，不需要 sudo）
 #   bash setup-fonts.sh --check     # 只检查，不下载

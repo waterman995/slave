@@ -1,4 +1,4 @@
-# slave / ziwei-report
+# slave / wake_the_slave
 
 > A Pi skill that turns Ziwei Doushu charts into a print-ready, mobile-friendly Chinese PDF booklet.
 
@@ -10,9 +10,9 @@
 ## Quick start for agents with shell access
 
 ```bash
-git clone https://github.com/waterman995/slave.git ~/.pi/agent/skills/ziwei-report
-bash ~/.pi/agent/skills/ziwei-report/install.sh
-bash ~/.pi/agent/skills/ziwei-report/scripts/check-env.sh
+git clone https://github.com/waterman995/slave.git ~/.pi/agent/skills/wake_the_slave
+bash ~/.pi/agent/skills/wake_the_slave/install.sh
+bash ~/.pi/agent/skills/wake_the_slave/scripts/check-env.sh
 ```
 
 Then read SKILL.md and follow it. Do not invent chart facts; use the CLI in `~/ziwei-work`.

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# slave / ziwei-report 一键安装
+# slave / wake_the_slave 一键安装
 #
 # 用法：
 #   bash install.sh
@@ -101,6 +101,6 @@ say "技能目录：$SKILL_DIR"
 say "引擎目录：$WORK_DIR"
 say ""
 say "在 Pi 里说："
-say "  用 ziwei-report 给这个人做个人盘："
+say "  用 wake_the_slave 给这个人做个人盘："
 say "  公历 1990-01-01 12:00，北京，男。"
 say "  PDF 放桌面。"

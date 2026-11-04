@@ -1,6 +1,6 @@
 # slave
 
-> `slave` 是项目名；技能名是 `ziwei-report`。名字取自「命运是沉睡的奴隶」——看人和命运，谁是主人。
+> `slave` 是项目名；技能名是 `wake_the_slave`。名字取自「命运是沉睡的奴隶」——看人和命运，谁是主人。
 
 把一张或两张紫微斗数命盘，做成一本可打印、适合手机阅读的中文册子（PDF）。
 
@@ -34,7 +34,7 @@
 
 把仓库链接和下面这句一起发给能运行命令的 agent：
 
-> 读取 https://raw.githubusercontent.com/waterman995/slave/main/SKILL.md，严格照做。先把仓库克隆到 ~/.pi/agent/skills/ziwei-report，运行 `bash ~/.pi/agent/skills/ziwei-report/install.sh`；然后按 SKILL.md 给我做一本个人盘。我的出生信息是：……
+> 读取 https://raw.githubusercontent.com/waterman995/slave/main/SKILL.md，严格照做。先把仓库克隆到 ~/.pi/agent/skills/wake_the_slave，运行 `bash ~/.pi/agent/skills/wake_the_slave/install.sh`；然后按 SKILL.md 给我做一本个人盘。我的出生信息是：……
 
 只能读网页、不能运行命令的 agent：让它先读 `SKILL.md`，按规范写 Markdown 正文；不要假装能生成 PDF。
 
@@ -44,15 +44,15 @@
 
 ```bash
 git clone https://github.com/waterman995/slave.git \
-  ~/.pi/agent/skills/ziwei-report
+  ~/.pi/agent/skills/wake_the_slave
 ```
 
-也可以直接下载 ZIP，把整个目录放到 `~/.pi/agent/skills/ziwei-report`。
+也可以直接下载 ZIP，把整个目录放到 `~/.pi/agent/skills/wake_the_slave`。
 
 ### 2. 一键安装
 
 ```bash
-bash ~/.pi/agent/skills/ziwei-report/install.sh
+bash ~/.pi/agent/skills/wake_the_slave/install.sh
 ```
 
 它会依次做：装字体 → 拉上游引擎到 `~/ziwei-work` → 复制 CLI → 删掉 `server-only` → `npm install` → `selftest` → 环境检查。
@@ -70,7 +70,7 @@ bash ~/.pi/agent/skills/ziwei-report/install.sh
 想自己控制每一步：
 
 ```bash
-cd ~/.pi/agent/skills/ziwei-report
+cd ~/.pi/agent/skills/wake_the_slave
 
 bash scripts/setup-fonts.sh
 bash scripts/check-env.sh
@@ -91,7 +91,7 @@ npx tsx cli.ts --selftest
 ### 4. 在 Pi 里用
 
 ```text
-用 ziwei-report 给这个人做个人盘：
+用 wake_the_slave 给这个人做个人盘：
 公历 1990-01-01 12:00，北京，男。
 PDF 放桌面。
 ```
@@ -99,7 +99,7 @@ PDF 放桌面。
 合盘：
 
 ```text
-用 ziwei-report 做合盘：
+用 wake_the_slave 做合盘：
 他 1990-01-01 12:00，北京，男
 她 1992-05-20 08:30，杭州，女
 PDF 放桌面。

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ziwei-report 煅烧自检
+# wake_the_slave 煅烧自检
 #
 # 用法：
 #   bash smoke-test.sh                         # 只查 skill 文件

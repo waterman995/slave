@@ -3,15 +3,15 @@
 If you are an AI agent with shell access:
 
 1. Read `SKILL.md` completely before doing anything.
-2. Clone this repository to `~/.pi/agent/skills/ziwei-report` if it is not there:
+2. Clone this repository to `~/.pi/agent/skills/wake_the_slave` if it is not there:
    ```bash
-   git clone https://github.com/waterman995/slave.git ~/.pi/agent/skills/ziwei-report
+   git clone https://github.com/waterman995/slave.git ~/.pi/agent/skills/wake_the_slave
    ```
 3. Run:
    ```bash
-   bash ~/.pi/agent/skills/ziwei-report/install.sh
+   bash ~/.pi/agent/skills/wake_the_slave/install.sh
    ```
-4. Run `bash ~/.pi/agent/skills/ziwei-report/scripts/check-env.sh`; do not generate a booklet until it passes.
+4. Run `bash ~/.pi/agent/skills/wake_the_slave/scripts/check-env.sh`; do not generate a booklet until it passes.
 5. Follow `SKILL.md` for the chart, chapter structure, citations, fonts, and self-checks.
 6. Use `~/ziwei-work` as the engine project (`cli.ts` + `lib/ziwei`). Do not invent chart facts.
 
