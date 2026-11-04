@@ -1,12 +1,14 @@
-# ziwei-report
+# slave
+
+> `slave` 是项目名；技能名是 `ziwei-report`。名字取自「命运是沉睡的奴隶」——看人和命运，谁是主人。
 
 把一张或两张紫微斗数命盘，做成一本可打印、适合手机阅读的中文册子（PDF）。
 
 > A Pi skill that turns Ziwei Doushu charts into a print-ready, mobile-friendly Chinese PDF booklet.
 
-[![CI](https://github.com/waterman995/ziwei-report/actions/workflows/ci.yml/badge.svg)](https://github.com/waterman995/ziwei-report/actions/workflows/ci.yml)
+[![CI](https://github.com/waterman995/slave/actions/workflows/ci.yml/badge.svg)](https://github.com/waterman995/slave/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/waterman995/ziwei-report)](https://github.com/waterman995/ziwei-report/releases)
+[![Release](https://img.shields.io/github/v/release/waterman995/slave)](https://github.com/waterman995/slave/releases)
 
 ## 这是什么
 
@@ -28,25 +30,32 @@
 
 [示例 PDF](examples/sample.pdf)（7 页，只用虚构出生信息，展示版式，不是真实解读）。
 
+## 给 agent 的一句话
+
+把仓库链接和下面这句一起发给能运行命令的 agent：
+
+> 读取 https://raw.githubusercontent.com/waterman995/slave/main/SKILL.md，严格照做。先把仓库克隆到 ~/.pi/agent/skills/ziwei-report，运行 `bash install.sh`；然后按 SKILL.md 给我做一本个人盘。我的出生信息是：……
+
+只能读网页、不能运行命令的 agent：让它先读 `SKILL.md`，按规范写 Markdown 正文；不要假装能生成 PDF。
+
 ## 快速开始
 
 ### 1. 安装技能
 
 ```bash
-git clone https://github.com/waterman995/ziwei-report.git \
+git clone https://github.com/waterman995/slave.git \
   ~/.pi/agent/skills/ziwei-report
 ```
 
 也可以直接下载 ZIP，把整个目录放到 `~/.pi/agent/skills/ziwei-report`。
 
-### 2. 装字体与依赖
+### 2. 一键安装
 
 ```bash
-cd ~/.pi/agent/skills/ziwei-report
-
-bash scripts/setup-fonts.sh    # 缺什么装什么，装到用户字体目录
-bash scripts/check-env.sh      # 只探测；缺依赖会告诉你装什么
+bash ~/.pi/agent/skills/ziwei-report/install.sh
 ```
+
+它会依次做：装字体 → 拉上游引擎到 `~/ziwei-work` → 复制 CLI → 删掉 `server-only` → `npm install` → `selftest` → 环境检查。
 
 需要：Node.js ≥ 20、Chromium 内核、poppler、Python 3、curl，以及三款中文字体：
 
@@ -54,11 +63,18 @@ bash scripts/check-env.sh      # 只探测；缺依赖会告诉你装什么
 - 标签：Noto Sans CJK SC
 - 封面/问句：LXGW WenKai **比例版**（不是 Mono）
 
-### 3. 准备排盘项目
+`install.sh` 会装字体；系统工具缺了，`check-env.sh` 会给出按系统的安装命令。
 
-技能本身不带引擎。第一次用时，把上游引擎拉下来：
+### 3. 手动安装（可选）
+
+想自己控制每一步：
 
 ```bash
+cd ~/.pi/agent/skills/ziwei-report
+
+bash scripts/setup-fonts.sh
+bash scripts/check-env.sh
+
 git clone --depth 1 https://github.com/Renhuai123/ziwei-doushu.git ~/ziwei-work
 cp assets/cli.ts assets/package.json ~/ziwei-work/
 
@@ -95,6 +111,9 @@ PDF 放桌面。
 
 ```text
 SKILL.md                 技能入口：何时用、章节规范、写作规范、自检
+AGENTS.md                给 agent 的安装/使用指令
+llms.txt                 给 LLM 的仓库摘要
+install.sh               一键装字体、拉引擎、跑 selftest
 references/
   format.md              字体、CSS、HTML 骨架、PDF 生成、目录回填
   licenses.md            册子附录 D.5 的许可与致谢模板
